@@ -1,0 +1,156 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bbb"
+    android:orientation="vertical"
+    tools:context=".MainActivity"
+    >
+
+
+    <android.support.v7.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:popupTheme="@style/ThemeOverlay.AppCompat" />
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profile_image"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:src="@drawable/loc"
+        android:layout_marginLeft="85dp"
+        android:layout_marginTop="35dp"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#FF000000"/>
+
+    <LinearLayout
+        android:id="@+id/statusLayout"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:layout_below="@+id/toolbar" >
+
+        <TextView
+            android:id="@+id/detailsText"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/progressTitle"
+            android:visibility="visible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="20dp"
+            android:text="@string/getting_location"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:id="@+id/progressBar"
+            android:visibility="visible"
+            android:indeterminate="true"
+            android:paddingTop="10dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/gpsButton"
+            android:visibility="gone"
+            android:layout_width="fill_parent"
+            android:layout_height="54dp"
+            android:onClick="openLocationSettings"
+            android:text="@string/turn_on_GPS" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/shareLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:layout_below="@+id/statusLayout"
+        android:weightSum="3"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/shareButton"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:onClick="shareLocation"
+            android:text="@string/share_location"
+            android:textSize="18dp"
+            android:textStyle="italic"
+            android:drawableStart="@drawable/ic_share_black_24dp"
+            android:textAlignment="center"
+            android:layout_marginTop="10dp"
+            android:textColor="#070707"
+            android:paddingLeft="20dp"
+            android:drawableLeft="@drawable/ic_share_black_24dp"
+            android:background="@drawable/buttons"/>
+
+        <Button
+            android:id="@+id/copyButton"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:onClick="copyLocation"
+            android:paddingTop="10dp"
+            android:background="@drawable/buttons"
+            android:paddingLeft="20dp"
+            android:layout_marginTop="10dp"
+
+            android:drawableStart="@drawable/ic_content_copy_black_24dp"
+            android:text="@string/copy_location"
+           android:textSize="18dp"
+            android:textStyle="italic"
+            android:textColor="#070707"
+            android:drawableLeft="@drawable/ic_content_copy_black_24dp" />
+
+        <Button
+            android:id="@+id/viewButton"
+
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:onClick="viewLocation"
+            android:text="@string/view_location"
+            android:textStyle="italic"
+            android:paddingTop="10dp"
+            android:paddingLeft="20dp"
+            android:background="@drawable/buttons"
+            android:textSize="18dp"
+            android:textColor="#070707"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/ic_map_black_24dp"/>
+        <Button
+            android:id="@+id/trackMeButton"
+
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:onClick="trackMeClicked"
+            android:text="Track me"
+            android:textStyle="italic"
+            android:paddingTop="10dp"
+            android:paddingLeft="20dp"
+            android:background="@drawable/buttons"
+            android:textSize="18dp"
+            android:textColor="#070707"
+            android:layout_marginTop="10dp"
+            android:drawableLeft="@drawable/ic_map_black_24dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>
